@@ -16,7 +16,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @Value("${server.port:8081}")
+    @Value("${server.port:8082}")
     private String serverPort;
 
     @PostMapping(value = "/payment/create")

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -17,8 +17,8 @@ mybatis:
 
 eureka:
   instance:
-    instance-id: payment8001  # 给注册的服务，添加一个别名，这样eureka上就不会是ip+端口了
-    prefer-ip-address: true  # 鼠标点在备注名称上，现实ip
+    instance-id: payment8002
+    prefer-ip-address: true
 
     #心跳检测与续约时间
     #开发时没置小些，保证服务关闭后注册中心能即使剔除服务
