@@ -1,9 +1,9 @@
-package com.lun.common.service.impl;
+package com.lun.service.impl;
 
 
 import com.lun.common.dao.PaymentDao;
 import com.lun.common.entity.Payment;
-import com.lun.common.service.PaymentService;
+import com.lun.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,18 +11,16 @@ import org.springframework.stereotype.Service;
 public class PaymentServiceImpl implements PaymentService {
 
 
-    @Autowired
+    @Autowired(required = false)
     private PaymentDao paymentDao;
 
     @Override
     public int create(Payment payment) {
-//        return paymentDao.create(payment);
-        return 1;
+        return paymentDao.create(payment);
     }
 
     @Override
     public Payment getPaymentById(Long id) {
         return paymentDao.getPaymentById(id);
-//        return null;
     }
 }

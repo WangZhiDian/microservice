@@ -1,4 +1,4 @@
-package com.lun.common.service;
+package com.lun.service;
 
 
 import com.lun.common.entity.Payment;

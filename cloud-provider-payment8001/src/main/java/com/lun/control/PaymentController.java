@@ -1,15 +1,12 @@
-package com.lun.common.control;
+package com.lun.control;
 
 
 import com.lun.common.bean.CommonResult;
 import com.lun.common.entity.Payment;
-import com.lun.common.service.PaymentService;
+import com.lun.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -21,7 +18,7 @@ public class PaymentController {
     private int serverPort = 8081;
 
     @PostMapping(value = "/payment/create")
-    public CommonResult create(Payment payment) {
+    public CommonResult create(@RequestBody Payment payment) {
 
         int result = paymentService.create(payment);
 //        log.info("*****插入结果："+result);
@@ -30,12 +27,9 @@ public class PaymentController {
         if(result > 0)
             return new CommonResult(200, "插入数据库成功,serverPort: " + serverPort, result);
         else{
-            return new CommonResult(444, "插入数据库失败", null);
+            return new CommonResult(444, "插入数据库失败");
         }
 
-
-        /*CommonResult result = new CommonResult();
-        return result;*/
     }
 
     @GetMapping(value = "/payment/get/{id}")
