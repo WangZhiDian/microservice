@@ -14,11 +14,14 @@
         <module>cloud-commons</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-provider-payment8002</module>
-        <module>cloud-consumer-order80</module>
         <module>cloud-eureka-server7001</module>
         <module>cloud-eureka-server7002</module>
         <module>cloud-providerconsul-payment8006</module>
+        <module>cloud-provider-hygtrix-payment8003</module>
+        <module>cloud-consumer-order80</module>
         <module>cloud-consumer-feign-order81</module>
+        <module>cloud-consumer-feign-hystrix-order82</module>
+        <module>cloud-consumer-hystrix-dashboard9001</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
