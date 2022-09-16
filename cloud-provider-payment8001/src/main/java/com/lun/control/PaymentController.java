@@ -47,5 +47,26 @@ public class PaymentController {
         }
     }
 
+    // 该方法为了验证Feign的超时设置
+    @GetMapping(value = "/payment/timeout/get/{id}")
+    public CommonResult<Payment> getPaymentTimeOutById(@PathVariable("id") Long id)
+    {
+        Payment payment = paymentService.getPaymentById(id);
+
+        try{
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
+        if(payment != null)
+        {
+            return new CommonResult(200,"查询成功,serverPort:  " + serverPort, payment);
+        }else{
+            return new CommonResult(444,"没有对应记录,查询ID: " + id,null);
+        }
+    }
+
 
 }

@@ -2,21 +2,22 @@ package com.lun.controller;
 
 import com.lun.common.bean.CommonResult;
 import com.lun.common.entity.Payment;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import com.lun.common.middleware.customerlbrule.MyLoadBalancer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.net.URI;
 import java.util.List;
 
 @RestController
 @Slf4j
-public class OrderController {
+public class OrderCustomLbController {
 
-    //public static final String PAYMENT_URL = "http://localhost:8001";
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
@@ -26,22 +27,27 @@ public class OrderController {
     @Resource
     public DiscoveryClient discoveryClient;
 
+    @Autowired
+    public MyLoadBalancer myLoadBalancer;
 
-    @GetMapping("/consumer/payment/get/{id}")
+
+    @GetMapping("/consumer/payment/lb/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id) {
 
-        String url = PAYMENT_URL + "/payment/get/" + id;
-        CommonResult ret = restTemplate.getForObject(url, CommonResult.class);
-        return ret;
 
-    }
+        // 该处由程序通过服务发现，获取访问调用时，应该访问哪一个服务uri节点
+        // 下方的restTemplate在使用时，定义的Bean上，不用添加ribbon的@LoadBalance注解
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
 
-    @PostMapping("/consumer/payment/create")
-    public CommonResult create(@RequestBody Payment payment) {
+        if(instances == null || instances.size() <= 0){
+            return null;
+        }
 
-        String url = PAYMENT_URL + "/payment/create";
-        CommonResult ret = restTemplate.postForObject(url, payment, CommonResult.class);
-        return ret;
+        ServiceInstance serviceInstance = myLoadBalancer.instances(instances);
+        URI uri = serviceInstance.getUri();
+
+        return restTemplate.getForObject(uri+"/payment/lb", CommonResult.class);
+
     }
 
     @GetMapping("/consumer/discovery")
