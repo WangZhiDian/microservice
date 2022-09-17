@@ -2,6 +2,9 @@
 微服务学习实例，服务参考哔哩哔哩尚硅谷springcloud的课程学习实践，
 文档参考学友的CSDN文档：https://blog.csdn.net/u011863024/article/details/114298270
 
+git add 远程：
+git remote set-url origin https://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@github.com/WangZhiDian/springcloud-config.git
+
 一 注册中心：
 Eureka启动后，访问url：http://localhost:7001
 服务注册，启动类添加注解：@EnableEurekaClient  @EnableEurekaServer
@@ -56,6 +59,25 @@ Hystrix可以在服务方法执行超时，异常，或者服务当机后，提�
 在主启动类上开启熔断注解
 Hystrix除了功能，还有监控界面，通过提供的spring-cloud-starter-netflix-hystrix-dashboard来实现
 
+六 网关GateWay
+spring-gateway是基于spring6 Reactor springboot2的基础上实现的，异步非阻塞方式运行
+同时集成了ribbon，euraka，hystrix等功能，在网络的位置处于入口处，暴露接口
+组成部分：路由Route，断言Predict，拦截器Filter
 
 
+七 配置中心config
+配置中心用来统一管理微服务集群中的配置，通过spring-cloud-config-server创建配置服务端，服务端配置从git代码库拉取配置
+和spring-cloud-starter-config 来创建拉去配置的客户端，客户端配置从服务端拉去配置
+如果服务端修改了， 客户端需要实时动态刷新，需要在客户端主启动类添加@RefreshScope注解，和spring-cloud-starter-actuator监控
+并且先刷新：http://localhost:3355/actuator/refresh，客户端才能监控形式刷新
 
+八 消息总线
+消息总线，配合配置中心使用，即不能配置中心每次修改了，都需要手动的调用接口来刷新客户端拉取配置，得配置成自动的
+安装rocket时遇到的一个坑: 单机安装好rocketmq后，使用安装命令测试：sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+提示：java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+原因：tool命令没有写namesrv的变量，导致找不到：https://icode.best/i/81947046528911
+rabbitmq安装：https://blog.51cto.com/u_15444123/4715185
+rabbitmq安装的erLong和rabbitmq需要配套，否则安装会异常
+登录rabitmq guest异常，使用： https://blog.csdn.net/itcsdn_/article/details/108928571
+
+九 中间件屏蔽工具Stream Binder
