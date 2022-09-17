@@ -50,7 +50,7 @@ public class OrderCustomLbController {
 
     }
 
-    @GetMapping("/consumer/discovery")
+    @GetMapping("/consumer/Lb/discovery")
     public CommonResult getDiscoveryInfo() {
 
         List<ServiceInstance> services = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");

@@ -12,11 +12,11 @@
     <artifactId>cloud-provider-payment8001</artifactId>
 
     <dependencies>
-        <!--包含了sleuth+zipkin-->
-<!--        <dependency>
+        <!--包含了sleuth+zipkin 调用连相关-->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>-->
+        </dependency>
         <!--eureka-client 客户端，需要注册到eureka上去-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

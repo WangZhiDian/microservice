@@ -81,3 +81,18 @@ rabbitmq安装的erLong和rabbitmq需要配套，否则安装会异常
 登录rabitmq guest异常，使用： https://blog.csdn.net/itcsdn_/article/details/108928571
 
 九 中间件屏蔽工具Stream Binder
+Stream 可以很好的屏蔽服务访问的消息处理器，目前Binder只适配了kafka和rabbit，效果还不是很明显
+有了该功能后，服务如果想迁移中间件，就会好很多，但生产场景貌似不多
+使用，引入：spring-cloud-starter-stream-rabbit
+application.yaml 会有spring cloud stream rabbit 但引入，
+同时使用注解 推送：@EnableBinding(Source.class) 消费：@EnableBinding(Sink.class)  监听：@StreamListener(Sink.INPUT)
+
+十 调用连Sleuth
+该工具整合zipkin，就是监控服务调用过程中，各种调用链条
+引入 spring-cloud-starter-zipkin 同时启动一个 zipkin-server-2.12.9-exec.jar应用
+在application.yaml中，将zipkin但配置指向该jar应用启动后的ip和端口
+
+
+
+
+
