@@ -27,6 +27,7 @@
         <module name="cloudalibaba-consumer-nacos-order83" />
         <module name="cloudalibaba-provider-payment9011" />
         <module name="cloudalibaba-provider-payment9012" />
+        <module name="cloudalibaba-sentinel-service8401" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -52,6 +53,7 @@
       <module name="cloudalibaba-consumer-nacos-order83" target="1.8" />
       <module name="cloudalibaba-provider-payment9011" target="1.8" />
       <module name="cloudalibaba-provider-payment9012" target="1.8" />
+      <module name="cloudalibaba-sentinel-service8401" target="1.8" />
       <module name="microservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
