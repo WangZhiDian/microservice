@@ -20,5 +20,10 @@
     <file url="file://$PROJECT_DIR$/cloud-stream-rabbitmq-consumer8811" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-stream-rabbitmq-consumer8812" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-stream-rabbitmq-provider8801" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-stream-rabbitmq-provider8801/cloudalibaba-provider-payment9012" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-config-nacos-client3377" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-consumer-nacos-order83" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-provider-payment9011" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-provider-payment9012" charset="UTF-8" />
   </component>
 </project>

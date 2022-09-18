@@ -3,7 +3,12 @@
 文档参考学友的CSDN文档：https://blog.csdn.net/u011863024/article/details/114298270
 
 git add 远程：
+git config --global --unset https.proxy
 git remote set-url origin https://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@github.com/WangZhiDian/springcloud-config.git
+git remote set-url origin https://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@github.com/WangZhiDian/microservice.git
+
+本机ip： 192.168.31.97
+172.16.40.1
 
 一 注册中心：
 Eureka启动后，访问url：http://localhost:7001
@@ -91,6 +96,13 @@ application.yaml 会有spring cloud stream rabbit 但引入，
 该工具整合zipkin，就是监控服务调用过程中，各种调用链条
 引入 spring-cloud-starter-zipkin 同时启动一个 zipkin-server-2.12.9-exec.jar应用
 在application.yaml中，将zipkin但配置指向该jar应用启动后的ip和端口
+
+十一 Nacos注册
+
+
+
+十二 Nacos配置中心
+
 
 
 

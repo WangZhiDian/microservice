@@ -23,7 +23,10 @@
         <module name="cloud-providerconsul-payment8006" />
         <module name="cloud-stream-rabbitmq-consumer8811" />
         <module name="cloud-stream-rabbitmq-consumer8812" />
-        <module name="cloud-stream-rabbitmq-provider8801" />
+        <module name="cloudalibaba-config-nacos-client3377" />
+        <module name="cloudalibaba-consumer-nacos-order83" />
+        <module name="cloudalibaba-provider-payment9011" />
+        <module name="cloudalibaba-provider-payment9012" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -45,6 +48,10 @@
       <module name="cloud-stream-rabbitmq-consumer8811" target="1.8" />
       <module name="cloud-stream-rabbitmq-consumer8812" target="1.8" />
       <module name="cloud-stream-rabbitmq-provider8801" target="1.8" />
+      <module name="cloudalibaba-config-nacos-client3377" target="1.8" />
+      <module name="cloudalibaba-consumer-nacos-order83" target="1.8" />
+      <module name="cloudalibaba-provider-payment9011" target="1.8" />
+      <module name="cloudalibaba-provider-payment9012" target="1.8" />
       <module name="microservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
