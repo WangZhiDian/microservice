@@ -9,6 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/alibaba-seata-order-service2001/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-stream-rabbitmq-provider8801/cloudalibaba-provider-payment9012/pom.xml" />
       </set>
     </option>

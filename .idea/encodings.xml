@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/alibaba-seata-order-service2001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-config-center-3344" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-config-client-3355" charset="UTF-8" />
@@ -25,6 +26,9 @@
     <file url="file://$PROJECT_DIR$/cloudalibaba-consumer-nacos-order83" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-provider-payment9011" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-provider-payment9012" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-seata-account-service2003" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-seata-order-service2001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-seata-storage-service2002" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-sentinel-service8401" charset="UTF-8" />
   </component>
 </project>

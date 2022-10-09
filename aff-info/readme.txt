@@ -97,12 +97,21 @@ application.yaml 会有spring cloud stream rabbit 但引入，
 引入 spring-cloud-starter-zipkin 同时启动一个 zipkin-server-2.12.9-exec.jar应用
 在application.yaml中，将zipkin但配置指向该jar应用启动后的ip和端口
 
-十一 Nacos注册
+十一 Nacos注册中心
 
 
 
-十二 Nacos配置中心
+十二 Nacos配置中心和消息总线
 
+
+十三 Sentinel降级熔断
+
+
+十四 Seata事务
+1 sh seata-server.sh -h [IP] -p [端口]  虚拟机vm启动时，指定注册到nacos上的ip，否则会注册到虚拟机的内网ip
+2 0.9.0版本和1.x版本的seata不一样。0。9。0版本有file.conf和register.conf放到工程的resource中
+并且register.conf的service模块的vmgroup_mapping属性名称需要和application.yaml中的spring.cloud.alibaba.seata.tx-service-group
+对应的值相同：https://github.com/seata/seata-samples/blob/master/doc/quick-integration-with-spring-cloud.md
 
 
 
