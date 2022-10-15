@@ -7,6 +7,11 @@ git config --global --unset https.proxy
 git remote set-url origin https://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@github.com/WangZhiDian/springcloud-config.git
 git remote set-url origin https://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@github.com/WangZhiDian/microservice.git
 
+工程首先配置ssh配置（git现在需要ssh的方式推送，https的方式有点问题），然后：
+1 新工程，首先设置远程url：git remote set-url origin git@github.com:WangZhiDian/microcomponent.git
+2 然后在使用pull 或者push
+3 在工程中，添加gitignore来过滤提交时不需要提交的本地文件
+
 本机ip： 192.168.31.97
 172.16.40.1
 
